@@ -1,0 +1,27 @@
+#include<stdio.h>
+
+//declaring main function
+int main()
+{
+	//declaring local variables
+	int m, n, num, mask=0;
+	
+	printf("Enter the number: ");
+	scanf("%d", &num);
+	printf("Enter 'N': ");
+	scanf("%d", &n);
+	printf("Enter 'M': ");
+	scanf("%d", &m);
+	
+	if (num & (1 << n))       //logic for checking nth bit is set or not, if yes, it clears the mth bit
+	{
+		mask = (num & (~(1 << m)));          
+		printf("Updated value of num is %d\n", mask);
+	}
+	else
+	{
+		printf("Updated value of num is %d\n", num);
+	}
+	
+	return 0;
+}
