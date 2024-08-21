@@ -1,0 +1,67 @@
+#include<stdio.h>                           //preprocessor directive
+
+int main()                                    //every program must start with main function
+
+{                                             //opening block statement
+	int A,R,N,first,second,third,AP,GP;        //variable declaration
+	
+	printf("Enter the number of terms 'A': ");  //value take from user & reading output data
+	scanf("%d",&A);                              //reading input data
+	printf("Enter the common difference/ratio 'R': "); //value take from user & reading output data
+	scanf("%d",&R);                               //reading input data
+	printf("Enter the number of terms 'N': ");     //value take from user & reading output data
+	scanf("%d",&N);                               //reading input data
+	
+	if (N > 0)                            // if n is greater than 0
+	{                                      
+// Initialize
+		AP = A;                             // arithmetic progression is equal to A
+		printf("AP =");                 // Reading the output data 
+		
+		for (first = 0; first < N; first++)       // this loop will run depends upon first less than N
+		{ 
+			printf(" %d",AP);                 // reading output data
+			AP = AP + R;                          // arithmetic progression + r value 
+			
+			if (first <  N-1)                  // first less than n-1
+			{
+				printf(",");                    // to print the comma 
+			}
+		}
+		printf("\n");                            // to print the next line 
+// Initialize 
+		GP = A;                                 // geometric sequence is equal to A
+			printf("GP =");                         // Reading the output data 
+			
+		for (second = 0; second < N; second++)        // this loop will run second less than N
+		{
+			printf(" %d",GP);                   // Reading output data 
+			GP = GP * R;                        // Geometric sequence * r value 
+			
+			if (second < N-1)                      // second less than n-1
+			{
+				printf(",");                   // to print the comma
+			}
+		}
+		printf("\n");                          //to print the next line 
+// Initialize 
+		AP = A;                                 
+		printf("HP =");                       //harmonic progression reading the output data 
+		
+		for (third = 0; third < N; third++)          // This loop will run third less than N
+		{
+			printf(" %f",1/(float)AP);        // reading output data 1/float(ap)
+			AP = AP + R;                      // arithmetic progresssion +r value 
+			
+			if(third < N-1)                      // third less than -1
+			{
+				printf(",");                   // to print the comma
+			}
+		}
+		printf("\n");                         // to print the next line
+	}
+	else
+		printf("Invalid input\n");         // invalid input 
+
+	return 0;
+}
