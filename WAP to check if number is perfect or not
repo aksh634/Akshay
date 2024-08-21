@@ -1,0 +1,47 @@
+#include<stdio.h>
+
+int main()
+{
+    //declare the variables
+    int num, sum = 0, iter = 1;
+
+    //read the number from user
+    printf("Enter a number:");
+    scanf("%d",&num);
+    
+    //if the entered number is greater then zero
+    if(num > 0)
+    {
+        
+        //this loop will run half of the entered num times
+	while(iter <= num / 2)
+	{
+
+	    if(num % iter == 0)    //in order to get the divisor 
+	    {
+		sum = sum + iter;  //add all the divisor
+	    }
+
+	    iter++;
+	}
+
+	/*compare the sum value with the num and display the message */
+	if(sum == num)
+	{
+	    printf("Yes, entered number is perfect number\n"); 
+	} 
+	else
+	{
+	    printf("No, entered number is not a perfect number\n");
+	}
+
+    }
+    
+    //if the entered number is negative display this message
+    else
+    {
+	printf("Error:Invalid Input,Enter only positive number\n");
+    }
+
+    return 0;
+}
