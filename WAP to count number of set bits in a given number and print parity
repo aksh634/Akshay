@@ -1,0 +1,24 @@
+int main()
+{
+    //declaring local variables
+	int i, j, n, count=0;
+	printf("Enter the number: ");
+	scanf("%d", &n);
+	for (i=0; i<=31; i++)   //logic for to check set bit
+	{
+		if (n & (1<<i))
+				{
+					count = count + 1;
+				}
+	}
+	printf("Number of set bits = %d\n", count);
+	if (count & 1)         //logic for to check even or odd parity
+	{
+		printf("Bit parity is Odd\n");
+	}
+	else
+	{
+		printf("Bit parity is Even\n");
+	}
+	return 0;
+}
