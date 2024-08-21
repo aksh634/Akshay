@@ -1,0 +1,54 @@
+#include <stdio.h>                                              //preprocessor directive
+
+int third_largest(int *, int);                                 //function declaration
+
+int main()                                                     // main function 
+{
+	int size, ret, i;                                           // variable declaration
+
+	printf("Enter the size of the array :");                   //input taken from user
+	scanf("%d", &size);                                        //Read size from the user
+
+	int arr[size];                                             // declare the variable 
+
+	for (i=0;i <= size-1; i++)
+	{
+		scanf("%d",&arr[i]);                                    //Read elements into the array
+	}
+
+	ret = third_largest(arr, size);                             //funtion call
+
+	printf("third largest element of the array is %d\n", ret);      // it will print the second largest array 
+}
+
+int third_largest(int *arr, int size)                               // function defination 
+{
+
+	int second_largest=0, first_largest=arr[0],third_largest=0,i;   // declare the variables 
+
+	for (i=0; i < size; i++)                                           
+	{
+		if (arr[i] > first_largest)                                   // if the codition is arr[i] greater than first value 
+		{
+			first_largest=arr[i];
+		}
+	}
+
+	for (i=0; i < size; i++)
+	{
+		if (arr[i] > second_largest && arr[i] < first_largest)     //if the condition is arr[i] greater than second largest & operator checking
+		{
+			second_largest=arr[i];
+		}
+	}
+
+	for (i = 0; i < size; i++)
+	{
+		if (arr[i] > third_largest && arr[i] < second_largest)  //if the condition is arr[i] greater than third largest & operator checking 
+		{
+			third_largest=arr[i];
+		}
+	}
+
+	return third_largest;                                       //return where the function call is occur
+}
