@@ -1,0 +1,63 @@
+#include<stdio.h>
+
+int main()
+{
+    //declare the variables
+    int Nthday, firstday, result;
+    
+    //read the nthday from user
+    printf("Enter the value of 'n':");
+    scanf("%d", &Nthday);
+
+    //check the Nthday
+    if(Nthday >= 1 && Nthday <= 365)
+    {
+    	//display the days
+	printf("choose First day\n");
+	printf("1.Sunday\n 2.Monday\n 3.Tuesday\n 4.Wednesday\n 5.Thursday\n 6.Friday 7.Saturday\n");
+
+	//read the firstday from user
+	printf("Enter the option to set the first day:");
+	scanf("%d", &firstday);
+        
+        //check the firstday 
+	if (firstday >= 1 && firstday <= 7)
+	{
+	    //to find which day of the year
+	    result = ((firstday + Nthday) - 1) % 7;
+            
+            /*switch case for the result */
+	    switch (result)
+	    {
+		case 1 : printf("The day is Sunday\n");
+			 break;
+		case 2 : printf("The day is Monday\n");
+			 break;
+		case 3 : printf("The day is Tuesday\n");
+			 break;
+		case 4 : printf("The day is Wednesday\n");
+			 break;
+		case 5 : printf("The day is Thursday\n");
+			 break;
+		case 6 : printf("The day is Friday\n");
+			 break;
+		case 0 : printf("The day is Saturday\n");
+			 break;
+	    }
+	}
+
+	//display the error message if the condition is false
+	else
+	{
+	    printf("Error:Invalid input, first day should be > 0 and <= 7\n");
+	}
+	
+}
+   //display the error message if the condition is false	
+   else
+   {
+       printf("Error:Invalid input, n value should be > 0 and <= 365\n");
+   } 
+
+	return 0;
+}
