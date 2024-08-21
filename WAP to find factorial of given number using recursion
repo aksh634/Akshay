@@ -1,0 +1,30 @@
+#include <stdio.h>                               //preprocessor directive     
+
+int main()
+{
+	static int num;                               // variable declaration 
+	static int flag = 1,fact = 1;                     // variable declaration 
+
+	if(flag == 1)
+	{
+		printf("Enter the value of num : ");           // input taken from user 
+		scanf("%d",&num);                               // reading input
+		flag = 0;                                
+	}
+	if(num > 0)                                      // if the condition is num is greater than 0
+	{
+		fact = fact * num;                           // fact * num 
+		num--;                                       // post degrement first it will assign the value next degrement the value 
+		main();                                       // call the main function again and again 
+	}
+	else if(num == 0)                                 // if the num value is equal to 0 then it will print the fact values 
+	{
+		printf("Factorial of the given number is %d",fact);    // print the fact value 
+	}
+	else                                                  // if caondition is false then it will execute the else part 
+	{
+		printf("invalid input");                           // print the invalid imput 
+		return 0;                                           
+	}
+
+}
