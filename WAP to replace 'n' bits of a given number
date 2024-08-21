@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+//function declaration for replace_nbits
+int replace_nbits(int, int, int);
+
+int main()
+{
+	//declaring local variables
+      int num, n, value, res = 0;
+
+      //read inputs from user
+      printf("Enter the number: ");
+      scanf("%d", &num);
+      printf("Enter number of bits: ");
+      scanf("%d", &n);
+      printf("Enter the value: ");
+      scanf("%d", &value);
+
+      //function call for replace_nbits
+    res = replace_nbits(num, n, value);
+
+    //to print result
+    printf("Result = %d\n", res);
+
+    return 0;
+}
+
+//function defnition of replace_nbits
+int replace_nbits(int num, int n, int value)
+{
+	
+	//logic
+	return ( value & ( ( 1 << n ) - 1 ) | num & ~ ( (1 << n) - 1 ) );
+}
