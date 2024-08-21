@@ -1,0 +1,47 @@
+#include<stdio.h>
+
+int main()
+{
+    int num, first = 0, second = 1, next = 0;  //declare and initialise the variables
+
+    /*read the number from user */
+    printf("Enter a number:");
+    scanf("%d",&num);
+
+    if (num == 0)               //if user enteres number 0  
+    {
+	printf("%d\n",first);  //print the 0
+    }
+
+    else
+    {
+	if (num < 0)                       //if entered num is negative 
+	{
+	    while (first >= num &&  first <= -num)      //this loop will run until both the conditions are true 
+	    {
+
+		printf("%d",first);                    //print the first value
+
+		next = first - second;                  //generate next number by the subtraction of first and second
+		first = second;                         //swap the value
+		second = next;
+
+		/*to print ,*/
+		if (first >= num && first <= -num)
+		{
+		    printf(", ");
+		}
+	    }
+
+	    printf("\n");                   //after each row print a new line
+	}
+
+        /* if user enters a positive number */
+	else
+	{
+	    printf("Invalid input\n");
+	}
+    }
+
+    return 0;
+}
