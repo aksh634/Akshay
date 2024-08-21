@@ -1,0 +1,40 @@
+#include<stdio.h>                                    //preprocessor directive
+#include<string.h>
+char fun_swap(char *str,int k);                      //function declaration
+
+int main()                                              //main function
+{
+	char str[100];                                       // variable declaration 
+
+	//printf("Enter the string: ");                          //input taken from user
+	scanf("%[^\n]", str); 	                               //reading input data
+
+	int i=0,length=0;                                      //initialize as i & length is 0
+
+	while ( str[i] != '\0')                               // if the loop is not equal to the null character
+	{
+		i++;                                             
+		length++;
+	}
+
+	int k=length-1;
+	int j=0;                                 
+
+	fun_swap(str,k);                                      // function call 
+
+	printf("Reversed string is %s\n",str);                   // print the reverse string 
+}
+char fun_swap(char *str,int k)                         // function defination 
+{
+	static int j=0;                                   // static int initialize as 0
+
+	if( j < k)                                        // if the condition is j greater than length k
+	{
+		char temp=*(str+j);                            // swap the string values one by one 
+		*(str+j)=*(str+k);
+		*(str+k)=temp;
+		j++;
+		k--;
+		fun_swap(str,k);
+	}
+}
