@@ -1,0 +1,37 @@
+#include<stdio.h>
+
+int main()
+{
+    
+    // declaring variables
+	int num, i, j;
+	
+	//to reading input
+	printf("Enter the number: "); //prints the statement to enter the number
+	scanf("%d",&num); //to read the enterd value
+        
+        //logic for 1st half of the program
+        for (i = num; i > 1; i--) //enters the loop only when this condition is sarisfied 
+	{
+	    
+		for (j = i; j <= num; j++) //enters the loop only when this condition is sarisfied 
+		{
+			printf ("%d ", j); //prints the value of j
+		}
+		printf("\n"); //to print new line
+	}
+	
+	//logic for second half of program
+	for (i = 1; i <= num; i++) //enters the loop only when this condition is sarisfied
+	{
+	    
+		for (j = i; j <= num ;j++) //enters the loop only when this condition is sarisfied
+		{
+			printf("%d ",j); //prints the value of j
+		}
+	printf("\n");//to print new line
+	}
+	
+	//for sucessfull termination
+	return 0;
+}
