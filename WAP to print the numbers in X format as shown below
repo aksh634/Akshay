@@ -1,0 +1,35 @@
+#include<stdio.h>
+
+int main()
+{
+    int num, row, column;      //declare the variables
+
+    /* Read the number from user */
+    printf("Enter the number:"); 
+    scanf("%d", &num);
+
+    /* print the X pattern if entered number is greater than 2 */
+    if (num > 2)
+    {
+    	for (row = 1; row <= num; row++)              //this loop for the row it will run num times
+	{
+	    for (column = 1; column <= num; column++) //this loop for the column it will run num times
+	    {
+                /* if one of the conditions are true print column else print space*/
+	    	if (row == column || (row + column) == num + 1)
+		{
+		    printf("%d", column);                     
+		}
+		else
+		{
+		    printf("_");
+		}
+
+	    }
+
+	    printf("\n"); //print newline after each row
+	}
+
+    }
+    return 0;
+}
