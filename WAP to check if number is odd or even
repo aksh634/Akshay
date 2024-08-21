@@ -1,0 +1,48 @@
+#include<stdio.h>
+
+int main()
+{
+    //declare the variable
+    int num;
+
+    //read the num from user
+    printf("Enter the value of 'n' : ");
+    scanf("%d", &num);
+
+    //check the num is equal to 0 or not
+    if(num == 0)
+    {
+	printf("%d is neither odd nor even\n",num);
+    }
+
+   /*if the entered number is not equal to zero*/
+    else
+    {
+    	//to check entered number is positive even or odd
+	if(num > 0)
+	{
+	    if(num % 2 == 0)
+	    {
+		printf("%d is positive even number\n",num);
+	    }
+	    else
+	    {
+		printf("%d is positive odd number\n",num);
+	    }
+	}
+
+	//to check entered number is negative even or odd
+	else
+	{
+	    if(num % 2 == 0)
+	    {
+		printf("%d is negative even number\n",num);
+	    }
+	    else
+	    {
+		printf("%d is negative odd number\n",num);
+	    }
+	}
+    }
+    return 0;
+}
