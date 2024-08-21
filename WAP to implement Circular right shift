@@ -1,0 +1,39 @@
+#include <stdio.h>                            //preprocessor directive
+
+int function(unsigned int, int);              // function declaration
+
+int main()                                    //compound statement start with curly braces 
+{
+	int number, n;                      // declared the variable 
+
+	printf("Enter the num:");                 //input taken from user
+	scanf("%d", &number);                      //reading input data
+
+	printf("Enter n:");                         //input taken from user
+	scanf("%d", &n);                           //reading input data
+
+	function(number,n);                        //fuction call
+
+	printf("\n");                             //input taken from user
+	return 0;                                   
+}
+
+int function(unsigned int number, int n)      // function defination 
+{
+	int i, res;                               // declare the variable
+
+	res = (number >> n | number << 32 - n);   // This formula using the following steps 
+	printf("Result in Binary: ");                   
+
+	for (i=31; i>=0; i--)                     // read the value one by one if the condition is true 
+	{
+		if ((res & 1 << i) !=0)               // if the condition is executed 
+		{
+			printf("1 ");
+		}
+		else
+		{
+			printf("0 ");
+		}
+	}
+}
