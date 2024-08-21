@@ -1,0 +1,47 @@
+#include<stdio.h>
+
+int main()
+{
+    //declare the variables and initialise the variables
+    int num, first = 0, second = 1, next;
+
+    //read the number from user
+    printf("Enter a number:");
+    scanf("%d",&num);
+
+    if (num == 0)
+    {
+	printf("%d\n", first);
+    }
+    else
+    {
+	if (num > 0)
+	{
+	    //run the until first value is less than num
+	    while (first <= num)
+	    {
+		//print the first value
+		printf("%d",first);
+
+		//add the first and second value
+		next = first + second;
+		//swap logic
+		first = second;
+		second = next;
+
+		//to print ,
+		if (first <= num)
+		{
+		    printf(",");
+		}
+	    }
+
+	    printf("\n");  //print newline after printing a fibonacci sequence
+	}
+	else
+	{
+	    printf("Invalid input\n");
+	}
+    }
+    return 0;
+}
