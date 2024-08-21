@@ -1,0 +1,46 @@
+#include <stdio.h>                                         //preprocessor directive
+
+int print_sort(int *, int);                           // function declaration
+
+int main()                                                // main function 
+{
+	int size, ret, i;                                      // variable declaration
+
+	printf("Enter the size of the array :");               //input taken from user
+	scanf("%d", &size);                                   //Read size from the user
+
+	int arr[size];                                       // declare the variable 
+	printf("Enter elements into the array:");
+
+	for (i = 0; i < size; i++)      
+	{
+		scanf("%d",&arr[i]);                              //Read elements into the array
+	}
+	
+	ret = print_sort(arr, size);                       //funtion call
+
+}
+
+int print_sort(int *arr,int size)                      // function defination 
+{
+	int i, j;                                           // variable declaration 
+
+	printf("After removing duplicates: ");
+
+	for (i = 0; i < size; i++)                         // i is stores the orginal element 
+	{
+		for (j = i+1; j <size; j++)
+		{
+			if (*(arr+i) == *(arr+j))                  // if the condition is array of 1st element & 2nd element  compare if it is same
+				*(arr+j) = 0;                         // then put the zero 
+		}
+	}
+	for (i = 0; i < size; i++)                        
+	{
+		if (*(arr+i) != 0)                           // orginal value is not equal to zero means o is not printed 
+		{
+			printf(" %d",*(arr+i));                 // print the i orginal array values 
+		}
+	}
+	printf("\n");
+}
