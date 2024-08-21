@@ -1,0 +1,48 @@
+#include<stdio.h>                                        //header file
+
+int main()                                               //starting of main function
+{
+		int i, j, num1;                                    //declaring the integer variables
+	//	printf("Enter a number: \n");                    //print the value
+		scanf("%d", &num1);                              //taking input from user
+		
+		if(num1 > 1)                                     //if condition satisfy it will run
+		{
+				int array [num1 - 1];
+				
+				for (i = 0 ; i <= (num1 - 1) ; i++)       //this loop will run depends upon i condition satisfy
+				{
+						array [i] = i + 2;
+				}
+				
+				for (i = 2 ; i <= (num1 - 1) ; i++)       //this loop will run depends upon if condition satisfy      
+				{
+						for (j = 2 ; j <= (num1 / 2) ; j++)    //this loop will run depends upon if condition satisfy
+						{
+								if(array [i * j - 2] == (i * j)) //if condition satisfy it wil run
+								{
+										array [i * j - 2] = 0;
+								}
+						}
+				}
+				
+				printf("The primes less than or equal to %d are : " , num1);
+				
+				for (i = 0 ; i < (num1 - 1) ; i++)         //this loop will run depends upon if condition satisfy
+				{
+						if(array [i] != 0)                 //if condition satisfy it will run
+						{
+								printf("%d, ", array [i]);  //print the value
+						}
+
+				}
+				printf("\n");                              //it will go to next new line
+		}
+		
+		else                                               //if condition not satisfy else part will run
+		{
+				printf("Please enter a positive number which is > 1");   //print the invalid value
+		}
+		
+         return 0;                                          //to the end main
+}
